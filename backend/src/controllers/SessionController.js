@@ -1,14 +1,22 @@
 const connection = require('../database/connection')
+const md5 = require('md5')
 
 module.exports = {
     async create(request, response) {
-        const { id } = request.body
+        const { email, pswd } = request.body
 
         const user = await connection('users')
-            .where('id', id)
-            .select('name')
+            .select('*')
+            .where('email', email)
+            .first()
 
-        if (!user) {
+        if (user) {
+            const password = md5(pswd)
+
+            if (password !== user.password) {
+                return response.status(401).json({ error: 'Wrong password' })
+            }
+        } else {
             return response.status(400).json({ error: 'No user found!' })
         }
 

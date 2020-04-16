@@ -6,22 +6,21 @@ import api from '../../services/api'
 import './styles.css'
 
 export default function Logon() {
-    const [email, setEmail, pswd, setPswd] = useState('')
+    const [email, setEmail] = useState('')
+    const [pswd, setPswd] = useState('')
     const history = useHistory()
 
     async function handleLogin(e) {
         e.preventDefault()
 
-        try {
-            const response = await api.post('sessions', { email, pswd })
-
-            localStorage.setItem('email', email)
-            localStorage.setItem('name', response.data.name)
-
-            history.push('/profile')
-        } catch (error) {
-            alert('Falha no login, tente novamente.')
+        const data = {
+            email,
+            pswd,
         }
+
+        const response = await api.post('sessions', data)
+
+        console.log(response.data.name)
     }
 
     return (
@@ -32,14 +31,18 @@ export default function Logon() {
                     <h1>Login</h1>
 
                     <input
+                        type="email"
                         placeholder="E-mail"
                         value={email}
                         onChange={e => setEmail(e.target.value)}
+                        required
                     />
                     <input
+                        type="password"
                         placeholder="Senha"
                         value={pswd}
                         onChange={e => setPswd(e.target.value)}
+                        required
                     />
                     <button className="button" type="submit">Entrar</button>
 
