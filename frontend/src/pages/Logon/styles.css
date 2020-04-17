@@ -1,3 +1,7 @@
+body {
+    background-color: #ececf9;
+}
+
 .logon-container {
     width: 100%;
     max-width: 1120px;
@@ -5,13 +9,19 @@
     margin: 0 auto;
 
     display: flex;
-    align-items: center;
     justify-content: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.logon-container section {
+    padding: 1rem;
+    box-shadow: 1px 2px 4px grey;
+    align-self: center;
 }
 
 .logon-container h1 {
-    display: flex;
-    justify-content: center;
+    text-align: center;
 }
 
 .logon-container section.form {
@@ -26,4 +36,55 @@
 
 .logon-container section.form input {
     margin-bottom: 5px;
+}
+
+.logon-container section .back-link {
+    margin-top: 16px;
+}
+
+.logon-container #login-error {
+    width: 100%;
+    max-width: 350px;
+    align-self: center;
+    position: absolute;
+    top: 16px;
+}
+
+.logon-container #login-error .alert {
+    margin-top: 16px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.logon-container #login-error .alert button {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+.logon-container #login-error .alert p {
+    margin: 0;
+    font-size: 18px;
+    text-align: center;
+}
+
+.logon-container #login-error .alert-appear {
+    opacity: 0;
+    transform: scale(0.9);
+}
+
+.logon-container #login-error .alert-appear-done {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 300ms, transform 300ms;
+}
+
+.logon-container #login-error .alert-exit {
+    opacity: 1;
+}
+
+.logon-container #login-error .alert-exit-done {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 300ms, transform 300ms;
 }
