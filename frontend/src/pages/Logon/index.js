@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { render } from "react-dom"
 import { Link, useHistory } from 'react-router-dom'
 import { FiLogIn } from 'react-icons/fi'
+import { FaGithubSquare } from 'react-icons/fa'
 import Alert from 'react-bootstrap/Alert'
 
 import api from '../../services/api'
@@ -61,7 +62,7 @@ export default function Logon() {
             <section className="form-container">
                 <div className="form">
                     <form onSubmit={handleLogin}>
-                        <h1>LOGIN</h1>
+                        <h1 className="subtitle">LOGIN</h1>
 
                         <input
                             type="email"
@@ -84,6 +85,14 @@ export default function Logon() {
                             Não tenho cadastro
                         </Link>
                     </form>
+                </div>
+            </section>
+
+            <section className="footer-container">
+                <div>
+                    <a href="https://github.com/Levonhard" target="_blank" rel="noopener noreferrer">
+                        <FaGithubSquare size={32} />&#009;github.com/Levonhard
+                    </a>
                 </div>
             </section>
         </div>
