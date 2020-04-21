@@ -3,7 +3,6 @@ import { render } from "react-dom"
 import { Link, useHistory } from 'react-router-dom'
 import { FiLogIn } from 'react-icons/fi'
 import Alert from 'react-bootstrap/Alert'
-import { CSSTransition } from 'react-transition-group'
 
 import api from '../../services/api'
 
@@ -19,13 +18,11 @@ export default function Logon() {
 
         if (show) {
             return (
-                <CSSTransition in={show} appear={show} timeout={300} classNames="alert">
-                    <Alert variant="danger" onClose={() => setShow(false)} dismissible>
-                        <p>
-                            Email ou senha incorretos.<br></br>Tente novamente.
-                        </p>
-                    </Alert>
-                </CSSTransition>
+                <Alert variant="danger" onClose={() => setShow(false)} dismissible>
+                    <p>
+                        Email ou senha incorretos.<br></br>Tente novamente.
+                    </p>
+                </Alert>
             )
         }
     }
@@ -53,33 +50,41 @@ export default function Logon() {
 
     return (
         <div className="logon-container">
-            <div id="login-error"></div>
+            <section className="header-container">
+                <h1>&#123; CurriculuMaker &#125;</h1>
+            </section>
 
-            <section className="form">
-                <form onSubmit={handleLogin}>
-                    <h1>Login</h1>
+            <section className="notifications-container">
+                <div id="login-error"></div>
+            </section>
 
-                    <input
-                        type="email"
-                        placeholder="E-mail"
-                        value={email}
-                        onChange={e => setEmail(e.target.value)}
-                        required
-                    />
-                    <input
-                        type="password"
-                        placeholder="Senha"
-                        value={pswd}
-                        onChange={e => setPswd(e.target.value)}
-                        required
-                    />
-                    <button className="button" type="submit">Entrar</button>
+            <section className="form-container">
+                <div className="form">
+                    <form onSubmit={handleLogin}>
+                        <h1>LOGIN</h1>
 
-                    <Link className="back-link" to="/register">
-                        <FiLogIn size={16} color="#E02041" />
-                        Não tenho cadastro
-                    </Link>
-                </form>
+                        <input
+                            type="email"
+                            placeholder="E-mail"
+                            value={email}
+                            onChange={e => setEmail(e.target.value)}
+                            required
+                        />
+                        <input
+                            type="password"
+                            placeholder="Senha"
+                            value={pswd}
+                            onChange={e => setPswd(e.target.value)}
+                            required
+                        />
+                        <button className="button" type="submit">ENTRAR</button>
+
+                        <Link className="back-link" to="/register">
+                            <FiLogIn size={16} color="#E02041" />
+                            Não tenho cadastro
+                        </Link>
+                    </form>
+                </div>
             </section>
         </div>
     )
