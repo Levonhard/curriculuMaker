@@ -9,6 +9,8 @@ import api from '../../services/api'
 
 import './styles.css'
 
+import logoImg from '../../assets/logo.png'
+
 export default function Logon() {
     const [email, setEmail] = useState('')
     const [pswd, setPswd] = useState('')
@@ -52,7 +54,8 @@ export default function Logon() {
     return (
         <div className="logon-container">
             <section className="header-container">
-                <h1>&#123; CurriculuMaker &#125;</h1>
+                {/* <h1>&#123; CurriculuMaker &#125;</h1> */}
+                <img src={logoImg} alt=""/>
             </section>
 
             <section className="notifications-container">

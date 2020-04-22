@@ -19,19 +19,16 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-
-    font-family: 'Cinzel', serif;
 }
 
-@media only screen and (max-width: 415px) {
-    .logon-container section.header-container h1 {
-        font-size: 35px;
-    }
+.logon-container section.header-container img {
+    max-height: 100%;
+    max-width: 450px;
 }
 
-@media only screen and (max-width: 360px) {
-    .logon-container section.header-container h1 {
-        font-size: 32px;
+@media only screen and (max-width: 450px) {
+    .logon-container section.header-container img {
+        max-width: 90%;
     }
 }
 
