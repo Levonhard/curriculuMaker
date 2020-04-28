@@ -15,6 +15,7 @@ body {
 /* ----CABEÇALHO---- */
 .logon-container section.header-container {
     height: 10%;
+    min-height: 50px;
 
     display: flex;
     align-items: center;
@@ -29,12 +30,20 @@ body {
 @media only screen and (max-width: 450px) {
     .logon-container section.header-container img {
         max-width: 90%;
+        min-height: 10%;
+    }
+}
+
+@media only screen and (max-height: 380px) {
+    .logon-container section.header-container img {
+        visibility: hidden;
     }
 }
 
 /* ----NOTIFICAÇÕES---- */
 .logon-container section.notifications-container {
     height: 15%;
+    min-height: 80px;
 
     display: flex;
     justify-content: center;
@@ -88,6 +97,12 @@ body {
     display: flex;
     justify-content: center;
     align-content: flex-end;
+}
+
+@media only screen and (max-height: 490px) {
+    .logon-container section.footer-container {
+        visibility: hidden;
+    }
 }
 
 .logon-container section.footer-container div {

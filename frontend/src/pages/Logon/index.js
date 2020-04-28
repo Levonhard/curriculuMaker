@@ -41,9 +41,7 @@ export default function Logon() {
         try {
             const response = await api.post('sessions', data)
 
-            localStorage.setItem('userId', response.data.id)
-            localStorage.setItem('userName', response.data.name)
-            localStorage.setItem('userUserName', response.data.username)
+            localStorage.setItem('sessionUser', JSON.stringify({id: response.data.id, name: response.data.name, username: response.data.username}))
 
             history.push('/profile')
         } catch {
@@ -54,7 +52,6 @@ export default function Logon() {
     return (
         <div className="logon-container">
             <section className="header-container">
-                {/* <h1>&#123; CurriculuMaker &#125;</h1> */}
                 <img src={logoImg} alt=""/>
             </section>
 
