@@ -67,10 +67,11 @@ export default function Register() {
                             placeholder="Senha"
                             value={pswd}
                             onChange={e => setPswd(e.target.value)}
+                            minLength={5}
                             required
                         />
 
-                        <button type="submit" className="button">Cadastrar</button>
+                        <button type="submit" className="button">CADASTRAR</button>
                     </form>
 
                     <Link className="back-link" to="/">

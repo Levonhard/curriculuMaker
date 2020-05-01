@@ -1,10 +1,9 @@
-body {
+/*body {
     background-color: #ececf9;
-}
+}*/
 
 .logon-container {
     width: 100%;
-    /*max-width: 1120px;*/
     height: 100vh;
     margin: 0 auto;
 
@@ -31,12 +30,6 @@ body {
     .logon-container section.header-container img {
         max-width: 90%;
         min-height: 10%;
-    }
-}
-
-@media only screen and (max-height: 380px) {
-    .logon-container section.header-container img {
-        visibility: hidden;
     }
 }
 
@@ -74,6 +67,8 @@ body {
 }
 
 .logon-container section.form-container .form {
+    background: #ececf9;
+    /*background: #f0f0f5;*/
     padding: 1rem;
     box-shadow: 1px 2px 4px grey;
     width: 100%;
