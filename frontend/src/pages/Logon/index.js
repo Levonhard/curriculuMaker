@@ -26,7 +26,7 @@ export default function Logon() {
                         Email ou senha incorretos.<br></br>Tente novamente.
                     </p>
                 </Alert>
-            )
+            );
         }
     }
 
@@ -45,7 +45,7 @@ export default function Logon() {
 
             history.push('/profile')
         } catch {
-            render(<LoginErrorElement />, document.getElementById('login-error'))
+            render(<LoginErrorElement />, document.getElementById('notification'))
         }
     }
 
@@ -55,9 +55,7 @@ export default function Logon() {
                 <img src={logoImg} alt=""/>
             </section>
 
-            <section className="notifications-container">
-                <div id="login-error"></div>
-            </section>
+            <section id="notification"></section>
 
             <section className="form-container">
                 <div className="form">

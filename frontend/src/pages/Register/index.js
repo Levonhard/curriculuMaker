@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
+import { render } from 'react-dom'
 import { Link, useHistory } from 'react-router-dom'
 import { FiArrowLeft } from 'react-icons/fi'
+import Alert from 'react-bootstrap/Alert'
 
 import api from '../../services/api'
 import './styles.css'
@@ -12,6 +14,20 @@ export default function Register() {
     const [pswd, setPswd] = useState('')
 
     const history = useHistory()
+
+    const RegisterErrorElement = function() {
+        const [show, setShow] = useState(true);
+
+        if (show) {
+            return (
+                <Alert variant="danger" onClose={() => setShow(false)} dismissible>
+                    <p>
+                        Este email já está cadastrado.<br></br>Tente outro email.
+                    </p>
+                </Alert>
+            );
+        }
+    }
 
     async function handleRegister(e) {
         e.preventDefault()
@@ -30,17 +46,19 @@ export default function Register() {
 
             history.push('/')
         } catch (err) {
-            alert('Erro no cadastro, tente novamente.')
+            render(<RegisterErrorElement />, document.getElementById('notification'))
+            document.getElementById('email').focus()
         }
     }
 
     return (
         <div className="new-register-container">
+            <div id="notification"></div>
             <div className="content">
                 <section>
                     {/*<img src={logoImg} alt="Be The Hero"/>*/}
     
-                    <h1 className="subtitle">CADASTRO</h1>                
+                    <h1 className="subtitle">CADASTRO</h1>
 
                     <form onSubmit={handleRegister}>
                         <input
@@ -50,6 +68,7 @@ export default function Register() {
                             required
                         />
                         <input
+                            id="email"
                             type="email"
                             placeholder="E-mail"
                             value={email}

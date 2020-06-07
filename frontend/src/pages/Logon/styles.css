@@ -26,44 +26,34 @@
     max-width: 450px;
 }
 
-@media only screen and (max-width: 450px) {
-    .logon-container section.header-container img {
-        max-width: 90%;
-        min-height: 10%;
-    }
-}
+/* ----NOTIFICAÇÃO---- */
+.logon-container #notification {
+    position: absolute;
+    align-self: center;
+    z-index: 2;
 
-/* ----NOTIFICAÇÕES---- */
-.logon-container section.notifications-container {
-    height: 15%;
-    min-height: 80px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.logon-container section.notifications-container #login-error {
     width: 100%;
     max-width: 350px;
 }
 
-.logon-container section.notifications-container #login-error .alert,
-.logon-container section.notifications-container #login-error .alert p {
+.logon-container #notification .alert {
     margin: 0;
 }
 
-.logon-container section.notifications-container #login-error .alert p {
+.logon-container #notification p {
+    margin: 0;
+    text-align: center;
     font-size: 18px;
 }
 
 /* ----FORMULÁRIO---- */
 .logon-container section.form-container {
-    height: 55%;
+    height: 70%;
 
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .logon-container section.form-container .form {
@@ -74,10 +64,6 @@
     width: 100%;
     max-width: 350px;
     text-align: center;
-}
-
-.logon-container section.form-container .form input {
-    margin-bottom: 5px;
 }
 
 .logon-container section.form-container .form .back-link {
@@ -92,12 +78,6 @@
     display: flex;
     justify-content: center;
     align-content: flex-end;
-}
-
-@media only screen and (max-height: 490px) {
-    .logon-container section.footer-container {
-        visibility: hidden;
-    }
 }
 
 .logon-container section.footer-container div {
@@ -120,4 +100,57 @@
 .logon-container section.footer-container div a:visited {
     text-decoration: none;
     color: #C0C0C0;
+}
+
+/* -------------------MEDIA QUERYS------------------- */
+/* ----CONTAINER PRINCIPAL E NOTIFICAÇÃO---- */
+@media only screen and (orientation: landscape)
+                   and (max-device-width: 823px) {
+    .logon-container {
+        height: 700px;
+    }
+
+    .logon-container section#notification {
+        top: 70px;
+    }
+
+    .logon-container #notification .alert {
+        padding-top: 6px;
+        padding-bottom: 6px;
+    }
+}
+
+/* ----CABEÇALHO E NOTIFICAÇÃO---- */
+@media only screen and (max-width: 450px) {
+    .logon-container section.header-container img {
+        max-width: 90%;
+        min-height: 10%;
+    }
+
+    .logon-container #notification {
+        top: 55px;
+    }
+
+    .logon-container #notification .alert {
+        padding-top: 6px;
+        padding-bottom: 6px;
+    }
+}
+
+@media only screen and (min-height: 641px) {
+    .logon-container section#notification {
+        top: 60px;
+    }
+}
+
+@media only screen and (min-height: 668px) {
+    .logon-container section#notification {
+        top: 70px;
+    }
+}
+
+@media only screen and (min-height: 823px) {
+    .logon-container section#notification {
+        top: 100px;
+    }
 }

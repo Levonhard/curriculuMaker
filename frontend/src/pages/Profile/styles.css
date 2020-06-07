@@ -1,0 +1,103 @@
+/* ----CABEÇALHO---- */
+.profile-container section.header-container {
+    margin-bottom: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 1px 2px 4px grey;
+}
+
+.profile-container section.header-container .header-top {    
+    width: 80%;
+    padding: 1rem 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-container section.header-container .header-top #logoIcon {
+    max-width: 50px;
+    max-height: 50px;
+    border-radius: 5px;
+    margin-right: 0.5rem;
+}
+
+.profile-container section.header-container .header-top #logoImg {
+    max-width: 300px;
+    max-height: 30px;
+}
+
+.profile-container section.header-container .header-bottom {
+    width: 100%;
+    padding: 0.5rem 0;
+    /*color: #e6e6e6;
+    background-image: 
+        linear-gradient(
+            to top right,
+            #e02041, #f06d06
+        );
+    */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.profile-container section.header-container .header-bottom p {
+    margin: 0;
+    font-size: 18px;
+}
+
+.profile-container section.header-container .header-bottom button {
+    height: 40px;
+    width: 105px;
+    border-radius: 4px;
+    border: 1px solid #dcdce6;
+    background: transparent;
+    transition: border-color 0.2s;
+
+    display: flex;
+    align-items: center;
+}
+
+.profile-container section.header-container .header-bottom button:hover {
+    border-color: #999;
+}
+
+.profile-container section.header-container .header-bottom button p {
+    margin: 0 0.5rem;
+}
+
+.profile-container section.header-container .header-bottom button span {
+    width: 31px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    background-color: #3a3a3a;
+}
+
+/* ----PRINCIPAL---- */
+.profile-container section.main-container {
+    display: flex;
+    justify-content: center;
+}
+
+.profile-container section.main-container .basic-info {
+    width: 80%;
+    max-width: 1120px;
+}
+
+.profile-container section.main-container .basic-info form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+@media only screen and (min-width: 800px) {
+    .profile-container section.main-container input {
+        width: 48%;
+    }
+}
